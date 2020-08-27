@@ -45,7 +45,7 @@ RUN apt-get -y --no-install-recommends install \
 #	VTS_Build
 #########################################################################################################################################################
 #########################################################################################################################################################
-From QtBuild as VTS
+FROM QtBuild as VTS
 
 # Copy the current folder which contains C++ source code to the Docker image under /usr/src
 COPY . /usr/src/buildVTS
