@@ -1,0 +1,15 @@
+PROJECT(TEST)
+
+IF(WIN32)
+        MESSAGE(STATUS "WIN32")
+ENDIF(WIN32)
+
+IF(LINUX)
+        MESSAGE(STATUS "LINUX")
+ENDIF(LINUX)
+
+IF(UNIX)
+        MESSAGE(STATUS "UNIX")
+ENDIF(UNIX)
+
+add_executable(helloTest test.cpp)
