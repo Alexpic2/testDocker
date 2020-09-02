@@ -56,7 +56,8 @@ RUN pwd
 
 # Let CMake build the software
 RUN cmake . && cmake --build .
-#RUN ls -a
+RUN ls -a
 
 # Run the program output from the previous step
+ENTRYPOINT [ "sh" ]
 CMD ["./entrypoint.sh"]
