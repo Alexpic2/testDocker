@@ -4,5 +4,5 @@ services:
   helloworld:
     image: hello
     build: .
-    volumes:
-      - /home/aerex/Documents/testContainer/testDocker/export:/usr/src/buildvts/export
+    volumes: #linux path /home/aerex/Documents/testContainer/testDocker/export:/usr/src/buildvts/export
+      - //C/export:/usr/src/buildvts/export
