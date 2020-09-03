@@ -13,9 +13,9 @@
 #	1 - Install dependencies for Qt
 #########################################################################################################################################################
 #########################################################################################################################################################
-#FROM ubuntu:bionic as dependencies
+FROM ubuntu:bionic as dependencies
 
-FROM stereolabs/zed:3.0-devel-jetson-jp4.2 as dependencies
+#FROM stereolabs/zed:3.0-devel-jetson-jp4.2 as dependencies
 
 # Install build dependencies
 RUN apt-get update
@@ -48,10 +48,10 @@ RUN apt-get -y --no-install-recommends install \
 FROM QtBuild as hello
 
 # Copy the current folder which contains C++ source code to the Docker image under /usr/src
-COPY . /usr/src/buildVTS
+COPY . /usr/src/buildvts
 
 # Specify the working directory
-WORKDIR /usr/src/buildVTS
+WORKDIR /usr/src/buildvts
 RUN pwd
 
 # Let CMake build the software

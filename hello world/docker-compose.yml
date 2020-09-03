@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  hello world:
-    image: alexpic/hello
+  helloworld:
+    image: hello
     build: .
     volumes:
-      - "//c/export":"/usr/src/buildvts/export/"
+      - /home/aerex/Documents/testContainer/testDocker/export:/usr/src/buildvts/export
