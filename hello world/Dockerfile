@@ -2,10 +2,8 @@
 #
 #	You must build with the command
 #	$ sudo docker build --tag hello .
-#
 #	Then run 
 #	$ sudo docker run --rm -v //C/export:/usr/src/buildvts/export hello
-#
 #
 
 #	1 - Install dependencies for Qt
