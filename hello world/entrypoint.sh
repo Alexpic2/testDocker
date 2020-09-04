@@ -1,10 +1,7 @@
-echo 'start hello test 1111'
+echo 'Entry point script'
 
 #mkdir export
-cp ./helloTest /usr/src/buildvts/export/
-# validation of cp
-echo '$ ls -l -a /usr/src/buildvts/export/ '
-ls -l -a /usr/src/buildvts/export/
+cp -r ./build ./export/build_`date +"%d-%m-%y_%H-%M"`
 
 #Run the soft
-./helloTest
+./build/helloTest
