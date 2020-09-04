@@ -9,6 +9,12 @@ IF(UNIX)
         MESSAGE(STATUS "================ UNIX ================")
 	EXECUTE_PROCESS( COMMAND uname -m COMMAND tr -d '\n' OUTPUT_VARIABLE ARCHITECTURE )
 	message(STATUS "Architecture: ${ARCHITECTURE}" )
+
+        IF(ARCHITECTURE STREQUAL "aarch64")
+                message(STATUS "Nvidia jetson")
+        ELSE()
+                message(STATUS "Intel core")
+        ENDIF()
 ENDIF(UNIX)
 
 add_executable(helloTest test.cpp)
