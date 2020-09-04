@@ -20,7 +20,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 	cmake \
 	pkg-config
 	
-#RUN apt-get clean
+RUN apt-get clean
 
 #	2 - QtBuild
 FROM dependencies as QtBuild
@@ -31,14 +31,14 @@ RUN apt-get -y --no-install-recommends install \
 #	3 hello_Build
 FROM QtBuild as hello
 
-# Copy the host folder to the image under /usr/src
+# Copy the host folder to the image under /usr/src/buildvts
 COPY . /usr/src/buildvts
 
 # Specify the working directory
 WORKDIR /usr/src/buildvts
 
 # Let CMake build the software
-RUN cmake . && cmake --build .
+RUN mkdir build && cd build && cmake .. && cmake --build .
 
 # Run the program output from the previous step
 ENTRYPOINT [ "sh" ]
